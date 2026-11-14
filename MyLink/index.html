@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoonseo Ku | MyLink</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            padding: 50px 20px;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(145deg, #0b1426, #243957);
+            color: white;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 440px;
+            margin: auto;
+        }
+
+        .label {
+            font-size: 12px;
+            letter-spacing: 5px;
+            color: #b8c8df;
+            margin-bottom: 25px;
+        }
+
+        .profile {
+            width: 100px;
+            height: 100px;
+            margin: auto;
+            border: 2px solid #c9d6e8;
+            border-radius: 50%;
+            background: #354a69;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        h1 {
+            margin: 20px 0 8px;
+            font-size: 30px;
+        }
+
+        .major {
+            color: #b6c7e2;
+            font-size: 14px;
+        }
+
+        .bio {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #e2e8f0;
+            margin: 20px 0 30px;
+        }
+
+        .link {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-align: left;
+            background: #22334d;
+            border: 1px solid #40516c;
+            border-radius: 14px;
+            padding: 18px;
+            margin: 14px 0;
+            color: white;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .link:hover {
+            background: #354a69;
+            transform: translateY(-3px);
+        }
+
+        .icon {
+            font-size: 24px;
+        }
+
+        .link-text {
+            flex: 1;
+        }
+
+        .link-text strong {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .link-text small {
+            color: #b6c7e2;
+            font-size: 12px;
+        }
+
+        .arrow {
+            color: #b6c7e2;
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 12px;
+            color: #a5b5cd;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+
+        <div class="label">MYLINK</div>
+
+        <div class="profile">YK</div>
+
+        <h1>Yoonseo Ku</h1>
+
+        <div class="major">
+            Hanyang University · Data Science
+        </div>
+
+        <p class="bio">
+            안녕하세요! 데이터사이언스를 전공하고 있습니다.<br>
+            데이터로 세상을 이해하고,<br>
+            새로운 가능성을 발견합니다.
+        </p>
+
+        <div id="links"></div>
+
+        <footer>
+            © 2026 Yoonseo Ku · MyLink
+        </footer>
+
+    </main>
+
+    <script>
+        const links = [
+            {
+                id: 1,
+                title: "GitHub",
+                description: "Coding & Projects",
+                url: "https://github.com/yoonseo222",
+                icon: "💻"
+            },
+            {
+                id: 2,
+                title: "Hanyang University",
+                description: "My University",
+                url: "https://www.hanyang.ac.kr/",
+                icon: "🎓"
+            },
+            {
+                id: 3,
+                title: "Kaggle",
+                description: "Data Science & Machine Learning",
+                url: "https://www.kaggle.com/",
+                icon: "📊"
+            },
+            {
+                id: 4,
+                title: "Instagram",
+                description: "Social Media",
+                url: "https://www.instagram.com/",
+                icon: "📷"
+            }
+        ];
+
+        const container = document.getElementById("links");
+
+        links.forEach(link => {
+            const a = document.createElement("a");
+
+            a.className = "link";
+            a.href = link.url;
+            a.target = "_blank";
+            a.rel = "noopener noreferrer";
+
+            a.innerHTML = `
+                <span class="icon">${link.icon}</span>
+                <span class="link-text">
+                    <strong>${link.title}</strong>
+                    <small>${link.description}</small>
+                </span>
+                <span class="arrow">↗</span>
+            `;
+
+            container.appendChild(a);
+        });
+    </script>
+</body>
+</html>
